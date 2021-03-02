@@ -1,0 +1,12 @@
+version: "3.7"  # composeファイルのバージョン
+services:       # コンテナを定義
+    mock-server:
+        build: ./
+        container_name: test_ss  # コンテナの名称
+        image: test_ss
+        expose:
+            - 5000                  # このポートをLISTEN状態にする
+        ports:
+            - 5000:5000
+        environment: 
+            TZ: "Asia/Tokyo"
